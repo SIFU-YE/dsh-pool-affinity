@@ -1,0 +1,29 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Syntax check
+        run: node --check index.js
+
+      - name: Self test
+        run: node selftest.mjs
+
+      - name: Marker simulation
+        run: node simulate.mjs
+
+      # 打包 → 安装 tarball → 导入宿主半区；证明「克隆后安装不报错」。
+      - name: Plugin preflight (pack + install + host import)
+        run: npx --yes dsh-plugin-toolkit@0.21.2 verify .
