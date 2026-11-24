@@ -1,5 +1,15 @@
 # Changelog · @local/dsh-pool-affinity
 
+## 2.1.7 — 2026-11-24
+
+### 补齐安装元数据（发布可安装性修复）
+
+- package.json 增加 ngines：dsh: ">=0.2.0 <0.3.0"、
+ode: ">=22"
+  —— 此前缺失 ngines.dsh，插件市场/安装器无法声明宿主版本要求；
+- README 增加 **Requirements** 段（写明 DSH 版本范围与 Node 版本）；
+- 本次修改由 dsh-plugin-toolkit 检查驱动，并已通过其 doctor 与 erify
+  （打包 9 文件 → 安装 tarball → 导入宿主半区）以及 selftest（81 项）、simulate（30 项）。
 ## 2.1.6 — 2026-11-18
 
 ### 增加 GLM-5.3 号池模型 + baseURL 环境变量化 + 公开快照去敏感
@@ -145,3 +155,4 @@
 ## 1.0.1 — 2026-10-17
 
 - 可见字面量 `[pool-tree: <id>]` 时代；修复升级识别。
+

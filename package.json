@@ -1,6 +1,6 @@
 {
   "name": "@local/dsh-pool-affinity",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "private": true,
   "type": "module",
   "description": "Pool companion plugin: injects the invisible zero-width session-tree key for account pinning, and ships the pool provider routes (pi-ai adapter, idle-timeout/retry policy, DeepSeek thinking-mode compat + reasoningEfforts) so one plugin covers both.",
@@ -32,5 +32,9 @@
     }
   },
   "license": "Apache-2.0",
-  "homepage": "https://github.com/SIFU-YE/dsh-pool-affinity"
+  "homepage": "https://github.com/SIFU-YE/dsh-pool-affinity",
+  "engines": {
+    "dsh": ">=0.2.0 <0.3.0",
+    "node": ">=22"
+  }
 }
