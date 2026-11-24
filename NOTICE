@@ -1,0 +1,11 @@
+dsh-pool-affinity
+Copyright 2026 sifu-ye
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+本仓库是 DeepSeek Harness（DSH）的 Host 插件，只使用宿主提供的运行时 API 与
+Node.js 内置模块（`node:` 前缀），不包含也不依赖任何第三方运行时包或 vendored
+源码，因此没有需要随本仓库分发的第三方版权声明。
+
+若把本插件与号池仓库（SIFU-YE/opencodego-pool）配套部署，号池服务端的各组件
+（如 LiteLLM、nginx 等）由该仓库独立安装，并分别遵循其自身许可证。
